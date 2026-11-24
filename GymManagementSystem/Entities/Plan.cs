@@ -1,0 +1,15 @@
+﻿namespace GymManagementSystem.Entities
+{
+    public class Plan:BaseEntity
+    {
+        public string Name { get; set; } = null!;
+        public string Description { get; set; } = null!;
+        public int DurationDays { get; set; }
+        public decimal Price { get; set; }
+        public bool IsActive { get; set; }
+
+        #region Relationships
+        public ICollection<Membership> PlanSubscriptions { get; set; } = null!;
+        #endregion
+    }
+}
