@@ -9,7 +9,13 @@ namespace GymManagementSystem.Controllers
     {
         //private GymDbContext _context = new GymDbContext();
 
-        private IplanRepository _planRepository = new PlanRepository();
+        //private IplanRepository _planRepository = new PlanRepository();
+
+        private IplanRepository _planRepository;
+        public PlanController(IplanRepository planRepository)
+        {
+            _planRepository = planRepository;
+        }
 
         public async Task<IActionResult> Index()
         {
