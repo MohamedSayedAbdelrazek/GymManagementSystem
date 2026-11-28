@@ -15,5 +15,10 @@ namespace GymManagementSystem.Repositories.Plans
 
         public async Task<IEnumerable<Plan>> GetAllPlansAsync(CancellationToken ct = default)
             => await _dbContext.Plans.AsNoTracking().ToListAsync();
+
+        public async Task<Plan?> GetPlanByIdAsync(int id, CancellationToken ct = default)
+            => await _dbContext.Plans.FindAsync([id],ct);
+            
+        
     }
 }

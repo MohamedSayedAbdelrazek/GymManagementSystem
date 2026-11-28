@@ -1,4 +1,5 @@
 using GymManagementSystem.Contexts;
+using GymManagementSystem.Repositories.Memberships;
 using GymManagementSystem.Repositories.Plans;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ namespace GymManagementSystem
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IplanRepository, PlanRepository>();
+            builder.Services.AddScoped<IMembershipRepository, MembershipRepository>();
             builder.Services.AddDbContext<GymDbContext>(options =>
             {
                 //options.UseSqlServer(builder.Configuration.GetSection("ConnectionStrings")["DefaultConnection"]);
